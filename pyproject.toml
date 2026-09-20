@@ -6,6 +6,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
 
+[project.scripts]
+audience-metrics = "audience_metrics.main:main"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

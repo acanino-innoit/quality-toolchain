@@ -24,16 +24,39 @@ python-quality-toolchain-lab/
 ├── src/
 │   └── audience_metrics/
 │       ├── __init__.py
+│       ├── main.py
 │       └── metrics.py
 └── tests/
     ├── conftest.py
     └── test_metrics.py
 ```
 
+### Run the example application
+
+The repository includes an executable example in
+`src/audience_metrics/main.py`. It passes a small set of hardcoded values to
+the package functions and prints their results. Run the registered project
+command with:
+
+```bash
+uv run audience-metrics
+```
+
+The `[project.scripts]` entry in `pyproject.toml` maps that command to the
+`main()` function. The equivalent module command is:
+
+```bash
+uv run python -m audience_metrics.main
+```
+
+Because the initial implementation defects are intentional, some displayed
+results may be incorrect until you complete the exercises below.
+
 Inspect `pyproject.toml` before running anything else. Find these sections:
 
 ```text
 [project]
+[project.scripts]
 [dependency-groups]
 [tool.ruff]
 [tool.ruff.lint]
@@ -365,6 +388,7 @@ Return to `pyproject.toml` and match each block to its reader:
 
 ```text
 [project]                    -> project metadata and runtime requirements
+[project.scripts]            -> executable `uv run audience-metrics` command
 [dependency-groups].dev      -> Ruff, mypy, and pytest
 [tool.ruff]                  -> shared Ruff settings
 [tool.ruff.lint]             -> enabled lint policy
