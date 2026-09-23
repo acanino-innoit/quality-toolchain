@@ -13,6 +13,7 @@ def main() -> None:
     print(f"Discounted price: {discount_price(price, discount):.2f}")
     print(f"First item: {first_item(items)}")
     print(f"Normalized name: {normalize_name(name)}")
+    print(f"Normalized name (None): {normalize_name(None)}")
 
 
 if __name__ == "__main__":
