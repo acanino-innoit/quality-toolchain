@@ -26,7 +26,9 @@ target-version = "py312"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "B"]
+select = ["E", "F", "I"]
+extend-select = ["B"]
+ignore = ["E501"]
 
 [tool.mypy]
 python_version = "3.12"
