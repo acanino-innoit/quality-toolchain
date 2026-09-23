@@ -1,4 +1,3 @@
-import statistics
 
 
 def discount_price(price: float, discount: float) -> float:
